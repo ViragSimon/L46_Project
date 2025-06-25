@@ -6,7 +6,7 @@ markers = ['o', 's', '^', 'D', 'v', '*', 'p', 'h', '8', '+', 'x']
 colors = ['b', 'r', 'g', 'c', 'm', 'y', 'k', '#FFA500', '#800080', '#008080', '#FF1493']
 
 def plot_accuracy_per_round(all_results):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5)) 
     
    
     i = 0
@@ -29,11 +29,11 @@ def plot_accuracy_per_round(all_results):
     plt.ylabel('Accuracy')
     plt.title('Global Model Accuracy for Each Round')
     plt.legend(bbox_to_anchor=(1.04, 0.5), loc='center left')
-    plt.tight_layout()  # Adjust layout to prevent legend cutoff
+    plt.tight_layout()  
     plt.grid(True)
 
 def plot_loss_per_round(all_results, modified_label:str = None):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5))  
 
     i = 0
     for key, value in all_results.items():
@@ -62,7 +62,7 @@ def plot_loss_per_round(all_results, modified_label:str = None):
     plt.grid(True)
 
 def plot_communication_cost_per_round(all_results, show_strategy_names:bool = False):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5)) 
     
     i = 0
     for key, value in all_results.items():
@@ -106,7 +106,7 @@ strategy_names = {
 }
 
 def plot_total_communication_cost_bar_chart(all_results):
-    plt.figure(figsize=(12, 6))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 6)) 
     total_communication_costs = {}
     for key, value in all_results.items():
         model_results = value[0]
@@ -124,7 +124,7 @@ def plot_total_communication_cost_bar_chart(all_results):
     plt.grid(True)
 
 def plot_l2_norm_per_round(all_results, modified_label:str = None):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5))  
     
     i = 0
     for key, value in all_results.items():
@@ -153,7 +153,7 @@ def plot_l2_norm_per_round(all_results, modified_label:str = None):
     plt.grid(True)
 
 def plot_parameter_difference_per_round(all_results, modified_label:str = None):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5)) 
     
     i = 0
     for key, value in all_results.items():
@@ -182,7 +182,7 @@ def plot_parameter_difference_per_round(all_results, modified_label:str = None):
     plt.grid(True)
 
 def plot_cosine_similarity_per_round(all_results):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5))  
     
     i = 0
     for key, value in all_results.items():
@@ -208,7 +208,7 @@ def plot_cosine_similarity_per_round(all_results):
     plt.grid(True)
 
 def plot_client_divergence_per_round(all_results):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5))  
     
     i = 0
     for key, value in all_results.items():
@@ -234,17 +234,17 @@ def plot_client_divergence_per_round(all_results):
     plt.grid(True)
 
 def plot_client_to_central_similarities_per_round(strategy_results):
-    plt.figure(figsize=(12, 5))  # Made wider to accommodate legend
+    plt.figure(figsize=(12, 5)) 
 
     metrics_history = strategy_results[2]
     rounds = metrics_history['rounds']
     client_similarities = metrics_history['client_to_central_similarities']
     strategy_name = strategy_results[0]
     
-    # For each round, client_similarities is a list of similarities for each client
-    num_clients = len(client_similarities[0])  # Get number of clients from first round
+
+    num_clients = len(client_similarities[0]) 
     
-    # Plot each client's similarities separately
+    
     for client_idx in range(num_clients):
         client_data = [round_similarities[client_idx] for round_similarities in client_similarities]
         
